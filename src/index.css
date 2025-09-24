@@ -2,41 +2,80 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Roblox "Grow a Garden" Game Companion App Design System */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Gaming-inspired color palette */
+    --background: 140 30% 98%;
+    --foreground: 140 95% 8%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 140 25% 96%;
+    --card-foreground: 140 95% 12%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 140 25% 96%;
+    --popover-foreground: 140 95% 12%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 142 76% 36%;
+    --primary-foreground: 140 15% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 120 60% 45%;
+    --secondary-foreground: 140 15% 98%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 140 20% 94%;
+    --muted-foreground: 140 25% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 280 65% 60%;
+    --accent-foreground: 140 15% 98%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 140 30% 88%;
+    --input: 140 30% 92%;
+    --ring: 142 76% 36%;
 
-    --radius: 0.5rem;
+    /* Game-specific colors */
+    --game-gold: 48 96% 53%;
+    --game-silver: 210 16% 71%;
+    --game-bronze: 25 95% 53%;
+    --game-legendary: 280 100% 70%;
+    --game-epic: 260 100% 68%;
+    --game-rare: 210 100% 66%;
+    --game-common: 140 50% 60%;
+    
+    /* Plant growth stages */
+    --plant-seed: 30 100% 50%;
+    --plant-sprout: 100 100% 40%;
+    --plant-growing: 120 100% 35%;
+    --plant-mature: 140 100% 30%;
+    --plant-harvestable: 280 100% 60%;
+    
+    /* Gaming UI effects */
+    --neon-glow: 142 76% 36%;
+    --crystal-shine: 200 100% 80%;
+    --magic-purple: 280 100% 70%;
+    --energy-blue: 210 100% 60%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    --gradient-gold: linear-gradient(135deg, hsl(var(--game-gold)), hsl(25 95% 53%));
+    --gradient-magical: linear-gradient(135deg, hsl(var(--magic-purple)), hsl(var(--crystal-shine)));
+    --gradient-nature: linear-gradient(135deg, hsl(var(--plant-growing)), hsl(var(--plant-mature)));
+    
+    /* Shadows & Effects */
+    --shadow-game: 0 4px 20px hsl(var(--primary) / 0.25);
+    --shadow-magical: 0 0 30px hsl(var(--magic-purple) / 0.4);
+    --shadow-gold: 0 0 25px hsl(var(--game-gold) / 0.3);
+    --glow-neon: 0 0 20px hsl(var(--neon-glow) / 0.6);
+    
+    /* Animation timings */
+    --animation-fast: 0.15s;
+    --animation-normal: 0.3s;
+    --animation-slow: 0.5s;
+    --bounce-timing: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,33 +95,34 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark mode for gaming experience */
+    --background: 140 20% 8%;
+    --foreground: 140 30% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 140 25% 12%;
+    --card-foreground: 140 30% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 140 25% 12%;
+    --popover-foreground: 140 30% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 142 86% 45%;
+    --primary-foreground: 140 20% 8%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 120 70% 55%;
+    --secondary-foreground: 140 20% 8%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 140 25% 15%;
+    --muted-foreground: 140 20% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 280 75% 70%;
+    --accent-foreground: 140 20% 8%;
 
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 140 25% 20%;
+    --input: 140 25% 18%;
+    --ring: 142 86% 45%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -101,5 +141,105 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   }
+}
+
+@layer components {
+  /* Gaming UI Components */
+  .game-card {
+    @apply bg-card border border-border rounded-lg p-4 shadow-lg backdrop-blur-sm;
+    background: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(var(--card) / 0.8) 100%);
+  }
+  
+  .game-button {
+    @apply bg-primary text-primary-foreground px-4 py-2 rounded-md font-medium transition-all duration-300;
+    box-shadow: var(--shadow-game);
+  }
+  
+  .game-button:hover {
+    @apply scale-105;
+    box-shadow: var(--glow-neon);
+  }
+  
+  .neon-text {
+    @apply text-primary;
+    text-shadow: 0 0 10px hsl(var(--neon-glow) / 0.6);
+  }
+  
+  .magical-border {
+    border: 2px solid transparent;
+    background: linear-gradient(hsl(var(--card)), hsl(var(--card))) padding-box,
+                var(--gradient-magical) border-box;
+  }
+  
+  .plant-glow {
+    box-shadow: 0 0 20px hsl(var(--plant-harvestable) / 0.4);
+  }
+  
+  .gold-effect {
+    background: var(--gradient-gold);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .floating-animation {
+    animation: floating 3s ease-in-out infinite;
+  }
+  
+  .pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+  
+  .grow-animation {
+    animation: growIn 0.5s var(--bounce-timing);
+  }
+  
+  /* Roblox-style panels */
+  .roblox-panel {
+    @apply bg-card border-2 border-border rounded-xl p-6;
+    background: linear-gradient(145deg, hsl(var(--card)), hsl(var(--muted)));
+    box-shadow: 
+      inset 2px 2px 4px hsl(var(--background) / 0.7),
+      inset -2px -2px 4px hsl(var(--border) / 0.5),
+      0 4px 12px hsl(var(--foreground) / 0.1);
+  }
+  
+  .progress-bar {
+    @apply relative bg-muted rounded-full overflow-hidden;
+    height: 8px;
+  }
+  
+  .progress-fill {
+    @apply h-full rounded-full transition-all duration-500;
+    background: var(--gradient-nature);
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 2px 2px 4px hsl(var(--foreground) / 0.3);
+  }
+  
+  .glass-effect {
+    backdrop-filter: blur(10px);
+    background: hsl(var(--card) / 0.8);
+  }
+}
+
+/* Keyframe animations */
+@keyframes floating {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 10px hsl(var(--primary) / 0.3); }
+  50% { box-shadow: 0 0 25px hsl(var(--primary) / 0.6); }
+}
+
+@keyframes growIn {
+  0% { transform: scale(0.8) rotate(-5deg); opacity: 0; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
 }
